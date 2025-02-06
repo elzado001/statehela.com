@@ -34,9 +34,70 @@ body{
     align-items: center;
     padding: 0 32px;
 }
-.top-nav .search-icon{
+.top-nav .mobile-menu-icon{
     cursor: pointer;
+    display: block;
+
 }
+
+
+/* navigtion  */
+
+.top-nav .mobile-menu-container{
+    display: flex;
+    position: fixed;
+    background-color: lightskyblue;
+    height: 70vh;
+    width: 25%;
+    z-index: 200;
+    border-radius: 15px;
+    border: 2px solid #000;
+    right: 0;
+    top: -10%;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 500ms cubic-bezier(0.03, 0.95, 0.11, 1.09);
+
+}
+
+.top-nav .mobile-menu-container.active{
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+     
+
+.top-nav .mobile-menu-container ul{
+    list-style: none;
+    text-align: center;
+}
+.top-nav .mobile-menu-container ul li{
+    margin: 16px 0;
+}
+.top-nav .mobile-menu-container ul li a{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 20px;
+}
+.top-nav .mobile-menu-container.active + .menu-close-icon{
+    
+    display: flex;
+    z-index: 300;
+    cursor: pointer;
+    padding: 16px;
+    background-color: #000;
+    border-radius: 4px;
+}
+
+
+
+/* hidden items */
+.mobile-menu-container, .menu-close-icon, .desktop{
+    display: none;
+}
+
 .top-nav nav ul{
     display: flex;
     list-style: none;
@@ -274,37 +335,14 @@ footer .footer-right{
     margin-top: 20px;
 }
 /* search container */
-.top-nav .search-container{
-    position: absolute;
-    right: 0;
-    top: 24px; 
-    opacity: 0;
-    pointer-events: none;
-    transition: 400ms;
 
-}
-.top-nav .search-container.active{
-    top: 40px;
-    opacity: 1; 
-    pointer-events: auto;
 
-}
+
 .top-nav .wrapper{
     position: relative;
    
    
      
-}
-.top-nav .search-container input[type="text"]{
-    padding:8px 24px;
-    border: 0;
-    box-shadow: 0 4px 8px -2px rgba(0,0,0,0.2);
-}
-.top-nav .search-container input[type="submit"]{
-    padding: 8px 24px;
-    background-color: greenyellow;
-    border: 1px solid greenyellow;
-    box-shadow: 0 4px 8px -2px rgba(0,0,0,0.2)
 }
 /* read more button */
 .post-body{
@@ -343,12 +381,7 @@ footer .footer-right{
     font-weight: bold;
 
 }
-/* hidden items */
-.mobile-menu-icon,
-.mobile-menu-container,
-.menu-close-icon{
-    display: none;
-}
+
 
 
 /* hanging buttons */
@@ -391,19 +424,16 @@ footer .footer-right{
 @media(max-width: 600px){
       /* top  nav */
 
-        .top-nav nav,
-        .top-nav .search-icon,
-        .top-nav .search-container{
-            display: none;
-        }
+      
         .wrapper{
             width: 100%;
             padding: 0 16px;
         }
-        .top-nav .mobile-menu-icon{
-            display: block;
-            cursor: pointer;
-        }
+       
+        /* hidden items */
+        .mobile{
+    display: none;
+}
         
 /* header */
   
@@ -494,49 +524,17 @@ a.button{
     }
     /* mobile navigtion  */
     .top-nav .mobile-menu-container{
-        display: flex;
-        position: fixed;
+      
         background-color: #222;
         height: 100vh;
+        width: 100%;
         z-index: 200;
-        left: 0;
-        right: 0;
         top: -100%;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        pointer-events: none;
-        transition: 500ms cubic-bezier(0.03, 0.95, 0.11, 1.09);
-
+       
     }
 
-    .top-nav .mobile-menu-container.active{
-        top: 0;
-        opacity: 1;
-        pointer-events: auto;
-    }
-         
-
-    .top-nav .mobile-menu-container ul{
-        list-style: none;
-        text-align: center;
-    }
-    .top-nav .mobile-menu-container ul li{
-        margin: 16px 0;
-    }
-    .top-nav .mobile-menu-container ul li a{
-        color: aliceblue;
-        text-decoration: none;
-        font-size: 20px;
-    }
-    .top-nav .mobile-menu-container.active + .menu-close-icon{
-        display: flex;
-        z-index: 300;
-        cursor: pointer;
-        padding: 16px;
-        background-color: #000;
-        border-radius: 4px;
-    }
+   
+   
     /* hanging buttons */
     .floating-buttons {
         right: 10px; /* Adjust position for smaller screens */
