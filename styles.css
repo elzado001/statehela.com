@@ -45,7 +45,7 @@ body{
 
 .top-nav .mobile-menu-container{
     display: flex;
-    position: fixed;
+    position: relative;
     background-color: lightskyblue;
     height: 100vh;
     width: 25%;
