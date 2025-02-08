@@ -13,8 +13,7 @@ body{
     width:1152px;
     margin: 0 auto;
     padding: 0 120px;
-}  
-
+}
 .wrapper p{
     line-height: 2;
     margin-bottom: 20px;
@@ -46,9 +45,9 @@ body{
 
 .top-nav .mobile-menu-container{
     display: flex;
-    
+    position: fixed;
     background-color: lightskyblue;
-    height: 100vh;
+    height: 70vh;
     width: 25%;
     z-index: 200;
     border-radius: 15px;
@@ -435,9 +434,10 @@ footer .footer-right{
         .mobile{
     display: none;
 }
-    .desktop{
-        display: block;
-    }
+
+.desktop{
+    display: block;
+}
         
 /* header */
   
